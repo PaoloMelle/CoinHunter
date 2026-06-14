@@ -1,0 +1,30 @@
+# Configurações gerais do jogo
+
+# TELA
+SCREEN_WIDTH = 1280
+SCREEN_HEIGHT = 720
+
+# FPS
+FPS = 60
+
+# TÍTULO
+GAME_TITLE = "Coin Hunter"
+
+# CORES
+WHITE = (255, 255, 255)
+GOLD = (255, 215, 0)
+GREEN = (0, 255, 0)
+RED = (255, 0, 0)
+BLACK = (0, 0, 0)
+
+# MODOS DE JOGO
+
+EASY_TIME = 60
+EASY_GOAL = 10
+
+HARD_TIME = 40
+HARD_GOAL = 15
+
+# PLAYER
+
+PLAYER_SPEED = 6
