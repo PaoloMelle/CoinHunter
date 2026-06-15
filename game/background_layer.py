@@ -1,17 +1,14 @@
 import pygame
 
-# Representa uma camada individual do fundo utilizada no efeito Parallax
+from game.resource_path import resource_path
+
+
 class BackgroundLayer:
 
-    def __init__(
-            self,
-            image_path,
-            speed,
-            y_position
-    ):
+    def __init__(self, image_path, speed, y_position):
 
         self.image = pygame.image.load(
-            image_path
+            resource_path(image_path)
         ).convert_alpha()
 
         self.image = pygame.transform.scale(
@@ -20,9 +17,7 @@ class BackgroundLayer:
         )
 
         self.speed = speed
-
         self.x = 0
-
         self.y = y_position
 
     def update(self):
@@ -38,15 +33,5 @@ class BackgroundLayer:
 
         width = self.image.get_width()
 
-        screen.blit(
-            self.image,
-            (self.x, self.y)
-        )
-
-        screen.blit(
-            self.image,
-            (
-                self.x + width,
-                self.y
-            )
-        )
+        screen.blit(self.image, (self.x, self.y))
+        screen.blit(self.image, (self.x + width, self.y))

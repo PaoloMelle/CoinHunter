@@ -2,14 +2,15 @@ import pygame
 
 from game.entity import Entity
 from game.settings import PLAYER_SPEED
+from game.resource_path import resource_path
 
-# Classe responsável pelo personagem controlado pelo jogador
+
 class Player(Entity):
 
     def __init__(self):
 
         super().__init__(
-            "assets/images/player.png",
+            resource_path("assets/images/player.png"),
             600,
             350
         )

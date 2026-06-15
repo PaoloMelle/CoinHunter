@@ -5,6 +5,7 @@ from game.menu import Menu
 from game.game_manager import GameManager
 from game.sound_manager import SoundManager
 from game.score_screen import ScoreScreen
+from game.resource_path import resource_path
 
 pygame.init()
 
@@ -13,7 +14,9 @@ SoundManager.initialize()
 SoundManager.play_menu_music()
 
 icon = pygame.image.load(
-    "assets/images/icon.png"
+    resource_path(
+        "assets/images/icon.png"
+    )
 )
 
 pygame.display.set_icon(icon)
@@ -70,7 +73,6 @@ while running:
                 game = GameManager("easy")
 
                 current_screen = "game"
-
 
             elif result == "JOGAR DIFICIL":
 

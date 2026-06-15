@@ -1,5 +1,8 @@
 import pygame
 
+from game.resource_path import resource_path
+
+
 # Controla os efeitos sonoros do jogo
 class SoundManager:
 
@@ -9,23 +12,33 @@ class SoundManager:
         pygame.mixer.init()
 
         SoundManager.coin = pygame.mixer.Sound(
-            "assets/sounds/coin.wav"
+            resource_path(
+                "assets/sounds/coin.wav"
+            )
         )
 
         SoundManager.menu = pygame.mixer.Sound(
-            "assets/sounds/menu.wav"
+            resource_path(
+                "assets/sounds/menu.wav"
+            )
         )
 
         SoundManager.victory = pygame.mixer.Sound(
-            "assets/sounds/victory.wav"
+            resource_path(
+                "assets/sounds/victory.wav"
+            )
         )
 
         SoundManager.defeat = pygame.mixer.Sound(
-            "assets/sounds/defeat.wav"
+            resource_path(
+                "assets/sounds/defeat.wav"
+            )
         )
 
         pygame.mixer.music.load(
-            "assets/sounds/menu_music.mp3"
+            resource_path(
+                "assets/sounds/menu_music.mp3"
+            )
         )
 
         pygame.mixer.music.set_volume(
@@ -42,12 +55,13 @@ class SoundManager:
 
     @staticmethod
     def play_menu_music():
+
         pygame.mixer.music.play(-1)
 
     @staticmethod
     def stop_music():
-        pygame.mixer.music.stop()
 
+        pygame.mixer.music.stop()
 
     @staticmethod
     def play_coin():
